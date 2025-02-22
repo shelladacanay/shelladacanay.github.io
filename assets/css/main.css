@@ -11,30 +11,64 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
-:root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+/* Apply Playfair Display to headings */
+/* Apply 'Great Vibes' to Headings */
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
 }
+
+/* Apply 'Parisienne' to Paragraphs */
+p {
+
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+
+  
+  
+}
+
+
+
+
+/* Apply Lato to body text */
+body, p, span, li, a {
+  font-family:'Snell Roundhand', 'Dancing Script' , cursive;
+}
+
+/* Adjust navbar for better appearance */
+.navmenu a {
+  font-family:'Snell Roundhand', 'Dancing Script' , cursive;
+  font-weight: 700;
+}
+
+/* Improve button and link readability */
+.btn, .btn a {
+  font-family:'Snell Roundhand', 'Dancing Script' , cursive;
+  font-weight: 600;
+}
+
+
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #17222d; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #4b1358; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #45505b;  /* The default color of the main navmenu links */
-  --nav-hover-color: #0563bb; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #4b1358; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #0563bb; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #4b1358; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -52,6 +86,11 @@
   --contrast-color: #ffffff;
 }
 
+h2 {
+  font-family:'Snell Roundhand', 'Dancing Script' , cursive;
+
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -60,10 +99,147 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
+
+/* Fade-in text effect */
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Image Hover Effect */
+.img-hover img {
+  transition: transform 0.5s ease-in-out;
+}
+
+.img-hover img:hover {
+  transform: scale(1.1);
+}
+
+/* Box Hover Effect */
+.box-hover {
+  transition: all 0.4s ease-in-out;
+}
+
+.box-hover:hover {
+  background-color: rgba(75, 19, 88, 0.1); /* Subtle purple accent */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* List Item Hover Effect */
+ul li {
+  transition: transform 0.3s ease-in-out;
+}
+
+ul li:hover {
+  transform: translateX(5px);
+  color: #4b1358;
+  font-weight: bold;
+}
+
+
+
+
+/* Slide-in Animation */
+[data-aos="fade-right"] {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Job Box Hover Effect */
+.job-box {
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.job-box:hover {
+  background: rgba(75, 19, 88, 0.1);
+  transform: scale(1.03);
+}
+
+/* Job Title Underline Animation */
+.job-title {
+  position: relative;
+  display: inline-block;
+}
+
+.job-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: #4b1358;
+  transition: all 0.4s ease-in-out;
+}
+
+.job-title:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Job Role Hover Effect */
+.job-role {
+  transition: color 0.3s ease-in-out;
+}
+
+.job-role:hover {
+  color: #4b1358;
+  font-weight: bold;
+}
+
+/* Job Description Fade-in Effect */
+.job-desc {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease-in-out;
+}
+
+.job-box:hover .job-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family:'Snell Roundhand', 'Dancing Script' , cursive;
 }
 
 a {
@@ -84,7 +260,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family:'Snell Roundhand', 'Dancing Script' , cursive;
 }
 
 /* PHP Email Form Messages
@@ -1454,6 +1630,3 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
